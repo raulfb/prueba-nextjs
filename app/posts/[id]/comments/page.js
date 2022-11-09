@@ -1,4 +1,7 @@
-const fetchComments = (id) => {
+import { resolve } from "styled-jsx/css"
+
+const fetchComments = async(id) => {
+    await new Promise(resolve => setTimeout(resolve,13000))
     return fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`, {
         next:{
             revalidate:10
@@ -12,11 +15,11 @@ export default async function Post({params}){
     const{id}= params
     const comments = await fetchComments(id)
     return(
-        <ul>
+        <ul style={{fontSize:'11px',background:'#eee'}}>
             {comments.map(comment => (
                 <li key={comment.id}>
-                    <h2>{comment.name}</h2>
-                    <p>{comment.body}</p>
+                    <h4>{comment.name}</h4>
+                    <small>{comment.body}</small>
                 </li>
             ))}
         </ul>
