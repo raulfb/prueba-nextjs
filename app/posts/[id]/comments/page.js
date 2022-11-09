@@ -1,5 +1,3 @@
-import { resolve } from "styled-jsx/css"
-
 const fetchComments = async(id) => {
     await new Promise(resolve => setTimeout(resolve,13000))
     return fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`, {

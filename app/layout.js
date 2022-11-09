@@ -7,8 +7,8 @@ export default function RootLayout({ children }) {
         <title>Mi primera aplicación con Next 13</title>
       </head>
       <body>
+      <marquee>Example.com</marquee>
         <Navigation/>
-        
         {children}
       </body>
     </html>
